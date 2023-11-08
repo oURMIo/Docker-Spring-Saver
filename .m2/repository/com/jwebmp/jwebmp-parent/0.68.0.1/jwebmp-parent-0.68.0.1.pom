@@ -1,0 +1,1850 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.jwebmp</groupId>
+    <artifactId>jwebmp-parent</artifactId>
+    <version>0.68.0.1</version>
+    <packaging>pom</packaging>
+
+    <name>JWebMP Parent</name>
+    <description>The Parent POM for JWebMP</description>
+    <url>https://jwebmp.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+
+        <jwebmp.runtime.classifier></jwebmp.runtime.classifier>
+
+        <maven.assembly.version>3.1.0</maven.assembly.version>
+        <maven.jar.version>3.1.0</maven.jar.version>
+        <maven.clean.version>3.1.0</maven.clean.version>
+        <maven.dependency.version>3.1.1</maven.dependency.version>
+        <maven.javadoc.version>3.0.1</maven.javadoc.version>
+        <maven.deploy.version>3.0.0-M1</maven.deploy.version>
+        <maven.install.version>3.0.0-M1</maven.install.version>
+        <maven.source.version>3.0.1</maven.source.version>
+        <maven.site.version>3.7.1</maven.site.version>
+        <maven.compiler.version>3.8.1</maven.compiler.version>
+        <maven.surefire.version>3.0.0-M3</maven.surefire.version>
+        <maven.failsafe.version>3.0.0-M1</maven.failsafe.version>
+        <maven.resources.version>3.1.0</maven.resources.version>
+        <maven.release.version>2.5.3</maven.release.version>
+        <maven.versions.version>2.7</maven.versions.version>
+        <maven.verifyier.version>1.1</maven.verifyier.version>
+        <maven.asm.version>7.1</maven.asm.version>
+        <maven.gpg.version>1.6</maven.gpg.version>
+
+        <maven.war.version>3.2.2</maven.war.version>
+        <maven.ear.version>3.0.1</maven.ear.version>
+        <maven.ejb.version>3.0.1</maven.ejb.version>
+
+        <build.helper.maven.plugin.version>3.0.0</build.helper.maven.plugin.version>
+        <lombok.version>1.18.8</lombok.version>
+
+        <netbeans.hint.license>gpl30</netbeans.hint.license>
+        <license.dir>${basedir}</license.dir>
+        <mapstruct.version>1.3.0.Final</mapstruct.version>
+
+        <jackson.version>${project.version}</jackson.version>
+        <fastclasspath.version>4.8.43</fastclasspath.version>
+
+        <faces.version>2.4.0</faces.version>
+        <glassishel.version>3.0.0</glassishel.version>
+        <eewebapi.version>7.0</eewebapi.version>
+        <resteasy.version>4.1.1.Final</resteasy.version>
+        <swagger.version>2.0.0</swagger.version>
+
+        <guice.version>${project.version}</guice.version>
+        <sonarqube.version>3.5.0.1254</sonarqube.version>
+        <jacoco.version>0.8.2</jacoco.version>
+        <guava.version>28.0-jre</guava.version>
+        <servlet.api.version>3.1.0</servlet.api.version>
+        <javassist.version>3.25.0-GA</javassist.version>
+        <jcabi.aspects.version>0.22.6</jcabi.aspects.version>
+        <javax.cache.api.version>1.1.0</javax.cache.api.version>
+        <javax.activation.version>1.2.0</javax.activation.version>
+        <javax.inject.version>${project.version}</javax.inject.version>
+        <jaxb.version>2.4.0-b180830.0359</jaxb.version>
+        <glassfish.jaxb.version>2.3.2</glassfish.jaxb.version>
+
+        <jsr305.version>2.0.3</jsr305.version>
+        <jsr311.api.version>1.1.1</jsr311.api.version>
+
+        <junit.jupiter.version>5.5.0</junit.jupiter.version>
+        <junit.jupiter.platform.version>1.3.2</junit.jupiter.platform.version>
+        <junit.version>4.12</junit.version>
+        <hamcrest.version>1.3</hamcrest.version>
+        <assertj.version>3.12.2</assertj.version>
+        <mockito.version>3.0.0</mockito.version>
+        <mockito.all.version>2.0.2-beta</mockito.all.version>
+
+        <javax.persistence.api>2.2</javax.persistence.api>
+        <javax.transaction.api>1.1</javax.transaction.api>
+        <javax.transaction.transactionapi>1.3</javax.transaction.transactionapi>
+        <eclipselink.version>2.7.4</eclipselink.version>
+
+        <h2.db.api>1.4.199</h2.db.api>
+
+        <bytebuddy.version>1.9.14</bytebuddy.version>
+        <maven.hibernate.version>5.4.3.Final</maven.hibernate.version>
+        <maven.hibernate.validator.version>6.0.16.Final</maven.hibernate.validator.version>
+        <maven.hibernate.annotations.version>5.1.0.Final</maven.hibernate.annotations.version>
+        <maven.hibernate.jpa.persistence.version>1.0.2.Final</maven.hibernate.jpa.persistence.version>
+
+        <btm.version>2.1.4</btm.version>
+        <jpa21.version>1.0.2.Final</jpa21.version>
+        <hazelcast.version>3.12.1</hazelcast.version>
+        <ehcache.version>3.8.0</ehcache.version>
+
+        <quality.check.version>1.3</quality.check.version>
+        <uadetector.core.version>0.9.22</uadetector.core.version>
+        <uadetector.json.version>0.1.22</uadetector.json.version>
+        <uadetector.detector.version>2014.10</uadetector.detector.version>
+        <sl4j.version>1.8.0-beta2</sl4j.version>
+
+        <io.swagger.version>2.0.8</io.swagger.version>
+
+        <!-- <commons.lang3>3.8.1</commons.lang3>
+         <commons.io>2.6</commons.io>
+         <commons.text>1.6</commons.text>-->
+        <!--<commons.fileupload>1.3.3</commons.fileupload>-->
+
+
+        <selenium.version>3.141.59</selenium.version>
+        <selenium.jupiter.version>3.2.2</selenium.jupiter.version>
+
+        <sonar.host.url>https://jwebmp.com/sonar</sonar.host.url>
+        <sonar.exclusions>**bower_components</sonar.exclusions>
+
+        <undertow.version>1.4.27.Final</undertow.version>
+        <xnio.version>3.3.8.Final</xnio.version>
+
+        <m2e.jsf.activation>false</m2e.jsf.activation>
+        <m2e.jpa.activation>false</m2e.jpa.activation>
+        <m2e.cdi.activation>false</m2e.cdi.activation>
+        <m2e.jaxrs.activation>false</m2e.jaxrs.activation>
+
+        <nexus.staging.maven.plugin.version>1.6.8</nexus.staging.maven.plugin.version>
+
+        <javax.validations.version>2.0.1.Final</javax.validations.version>
+        <atmosphere.runtime.version>2.5.1</atmosphere.runtime.version>
+
+        <jboss.annotations.spec.version>1.0.1.Final</jboss.annotations.spec.version>
+        <jsr.250>1.0</jsr.250>
+        <xstream.version>1.4.10</xstream.version>
+        <xpp3.version>1.1.6</xpp3.version>
+
+        <sonar.host.url>https://jwebmp.com/sonar</sonar.host.url>
+        <sonar.exclusions>**bower_components</sonar.exclusions>
+
+        <io.undertow.version>1.4.27.Final</io.undertow.version>
+        <tica.version>1.22</tica.version>
+
+        <java.mail.version>1.6.3</java.mail.version>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <jwebmp.runtime.classifier></jwebmp.runtime.classifier>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.jwebmp</groupId>
+                <artifactId>jwebmp-bom</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.errorprone</groupId>
+                <artifactId>error_prone_annotations</artifactId>
+                <version>2.3.2</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- BTM -->
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.osgi.core</artifactId>
+                <version>1.4.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.jms</groupId>
+                <artifactId>jms</artifactId>
+                <version>1.1</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.2.3</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>3.2.12</version>
+                <scope>provided</scope>
+                <optional>true</optional>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava-testlib</artifactId>
+                <version>27.1-jre</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.spec.javax.rmi</groupId>
+                <artifactId>jboss-rmi-api_1.0_spec</artifactId>
+                <version>1.0.6.Final</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>1.7.5</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jcabi</groupId>
+                <artifactId>jcabi-manifests</artifactId>
+                <version>1.1</version>
+            </dependency>
+
+            <!-- Stuffs-->
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-core</artifactId>
+                <version>${tica.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>commons-io</artifactId>
+                        <groupId>commons-io</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-java7</artifactId>
+                <version>${tica.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>commons-io</artifactId>
+                        <groupId>commons-io</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.annotation-api</artifactId>
+                        <groupId>javax.annotation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jakarta.activation</artifactId>
+                        <groupId>com.sun.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jakarta.activation</artifactId>
+                        <groupId>com.sun.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jakarta.activation</artifactId>
+                        <groupId>com.sun.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.activation</artifactId>
+                        <groupId>com.sun.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
+            <dependency>
+                <groupId>io.undertow</groupId>
+                <artifactId>undertow-core</artifactId>
+                <version>${io.undertow.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.jboss.xnio</groupId>
+                        <artifactId>xnio-nio</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.jboss.xnio</groupId>
+                        <artifactId>xnio-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>io.undertow</groupId>
+                <artifactId>undertow-servlet</artifactId>
+                <version>${io.undertow.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jboss-servlet-api_4.0_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.servlet</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.annotation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.servlet</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.jboss.xnio</groupId>
+                        <artifactId>xnio-nio</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.jboss.xnio</groupId>
+                        <artifactId>xnio-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.websocket</groupId>
+                <artifactId>javax.websocket-api</artifactId>
+                <version>1.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.undertow</groupId>
+                <artifactId>undertow-websockets-jsr</artifactId>
+                <version>${io.undertow.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jboss-websocket-api_1.1_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.websocket</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.jboss.xnio</groupId>
+                        <artifactId>xnio-nio</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.jboss.xnio</groupId>
+                        <artifactId>xnio-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${javax.validations.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.xnio</groupId>
+                <artifactId>xnio-nio</artifactId>
+                <version>${xnio.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.xnio</groupId>
+                <artifactId>xnio-api</artifactId>
+                <version>${xnio.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.classgraph</groupId>
+                <artifactId>classgraph</artifactId>
+                <version>${fastclasspath.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jcabi</groupId>
+                <artifactId>jcabi-aspects</artifactId>
+                <version>${jcabi.aspects.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+                <type>jar</type>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jsr305</artifactId>
+                        <groupId>com.google.code.findbugs</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>${ehcache.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava-gwt</artifactId>
+                <version>${guava.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet.api.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>${javassist.version}</version>
+                <type>jar</type>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>xml-apis</artifactId>
+                        <groupId>xml-apis</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.ws.rs</groupId>
+                <artifactId>jsr311-api</artifactId>
+                <version>${jsr311.api.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <!-- -->
+ <!--           <dependency>
+                <groupId>javax.cache</groupId>
+                <artifactId>cache-api</artifactId>
+                <version>${javax.cache.api.version}</version>
+                <type>jar</type>
+            </dependency>
+-->
+
+            <dependency>
+                <groupId>com.mchange</groupId>
+                <artifactId>mchange-commons-java</artifactId>
+                <version>0.2.16</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.mchange</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>0.9.5.4</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.jboss.logging</groupId>
+                <artifactId>jboss-logging</artifactId>
+                <version>3.3.2.Final</version>
+            </dependency>
+
+            <!-- Test Libraries -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit.jupiter.version}</version>
+                <scope>test</scope>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-all</artifactId>
+                <version>${hamcrest.version}</version>
+                <scope>test</scope>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
+                <scope>test</scope>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>net.bytebuddy</groupId>
+                <artifactId>byte-buddy</artifactId>
+                <version>${bytebuddy.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.8.5</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>3.13.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.squareup.okio</groupId>
+                <artifactId>okio</artifactId>
+                <version>2.2.2</version>
+            </dependency>
+
+
+            <!-- Database Settings -->
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>javax.persistence-api</artifactId>
+                <version>${javax.persistence.api}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.db.api}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>javax.mail</artifactId>
+                <version>1.6.2</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>activation</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.mail</groupId>
+                <artifactId>jakarta.mail-api</artifactId>
+                <version>1.6.3</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jakarta.activation-api</artifactId>
+                        <groupId>jakarta.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
+            <!-- Rest Easy-->
+            <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>resteasy-guice</artifactId>
+                <version>${resteasy.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>guice</artifactId>
+                        <groupId>com.google.inject</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>commons-io</artifactId>
+                        <groupId>commons-io</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>activation</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.xml.bind</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.annotation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>resteasy-core</artifactId>
+                <version>${resteasy.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>guice</artifactId>
+                        <groupId>com.google.inject</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>commons-io</artifactId>
+                        <groupId>commons-io</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>activation</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.xml.bind</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.annotation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>resteasy-jaxrs</artifactId>
+                <version>${resteasy.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>resteasy-servlet-initializer</artifactId>
+                <version>${resteasy.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>commons-io</artifactId>
+                        <groupId>commons-io</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>activation</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jboss-jaxb-api_2.3_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.xml.bind</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.annotation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.spec.javax.annotation</groupId>
+                <artifactId>jboss-annotations-api_1.3_spec</artifactId>
+                <version>${jboss.annotations.spec.version}</version>
+            </dependency>
+
+            <!-- Swagger runtime dependencies -->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-jaxrs2</artifactId>
+                <version>${io.swagger.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jackson-databind</artifactId>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>commons-lang3</artifactId>
+                        <groupId>org.apache.commons</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jackson-core</artifactId>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jackson-annotations</artifactId>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-jaxrs2-servlet-initializer</artifactId>
+                <version>${io.swagger.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>io.swagger.core.v3</groupId>
+                        <artifactId>swagger-jaxrs2</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- Hibernate if required -->
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-agroal</artifactId>
+                <version>${maven.hibernate.version}</version>
+                <type>jar</type>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.transaction</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.activation-api</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jakarta.activation-api</artifactId>
+                        <groupId>jakarta.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${maven.hibernate.version}</version>
+                <type>jar</type>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+                        <groupId>org.jboss.spec.javax.transaction</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.activation-api</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.xml.bind</artifactId>
+                        <groupId>jaxb-api</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.activation-api</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jakarta.activation-api</artifactId>
+                        <groupId>jakarta.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.jboss</groupId>
+                <artifactId>jandex</artifactId>
+                <version>2.1.1.Final</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml</groupId>
+                <artifactId>classmate</artifactId>
+                <version>1.3.4</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>eclipselink</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.core</artifactId>
+                <version>${eclipselink.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.jpa</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-c3p0</artifactId>
+                <version>${maven.hibernate.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-jcache</artifactId>
+                <version>${maven.hibernate.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.cache</groupId>
+                        <artifactId>cache-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.xml.bind</artifactId>
+                        <groupId>jaxb-api</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.1-api</artifactId>
+                <version>${maven.hibernate.jpa.persistence.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${maven.hibernate.validator.version}</version>
+                <type>jar</type>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.validation</groupId>
+                        <artifactId>validation-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-jpamodelgen</artifactId>
+                <version>${maven.hibernate.version}</version>
+                <type>jar</type>
+                <scope>provided</scope>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>javax.activation-api</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jakarta.activation-api</artifactId>
+                        <groupId>jakarta.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.common</groupId>
+                <artifactId>hibernate-commons-annotations</artifactId>
+                <version>${maven.hibernate.annotations.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator-annotation-processor</artifactId>
+                <version>${maven.hibernate.validator.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sf.qualitycheck</groupId>
+                <artifactId>quality-check</artifactId>
+                <version>${quality.check.version}</version>
+                <type>jar</type>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.code.findbugs</groupId>
+                        <artifactId>jsr305</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${sl4j.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>${glassfish.jaxb.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>javax.activation-api</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jakarta.activation-api</artifactId>
+                        <groupId>jakarta.activation</groupId>
+                    </exclusion>
+
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>${glassfish.jaxb.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>javax.activation-api</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jakarta.activation-api</artifactId>
+                        <groupId>jakarta.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.atmosphere</groupId>
+                <artifactId>atmosphere-runtime</artifactId>
+                <version>${atmosphere.runtime.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <!-- Testings -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito.all.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymock</artifactId>
+                <version>4.0.2</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-api-mockito2</artifactId>
+                <version>2.0.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-api-easymock</artifactId>
+                <version>2.0.2</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-module-junit4</artifactId>
+                <version>2.0.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.easytesting</groupId>
+                <artifactId>fest-assert</artifactId>
+                <version>1.4</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Integration Testing-->
+            <!-- Integration Test Framework-->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${selenium.version}</version>
+                <scope>test</scope>
+                <type>jar</type>
+
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-api</artifactId>
+                <version>${selenium.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.github.bonigarcia</groupId>
+                <artifactId>selenium-jupiter</artifactId>
+                <version>${selenium.jupiter.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>activation</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                </exclusions>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-chrome-driver</artifactId>
+                <version>${selenium.version}</version>
+                <scope>test</scope>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-firefox-driver</artifactId>
+                <version>${selenium.version}</version>
+                <scope>test</scope>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-remote-driver</artifactId>
+                <version>${selenium.version}</version>
+                <scope>test</scope>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-support</artifactId>
+                <version>${selenium.version}</version>
+                <scope>test</scope>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>1.2</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hazelcast</groupId>
+                <artifactId>hazelcast</artifactId>
+                <version>${hazelcast.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hazelcast</groupId>
+                <artifactId>hazelcast-all</artifactId>
+                <version>${hazelcast.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hazelcast</groupId>
+                <artifactId>hazelcast-client</artifactId>
+                <version>${hazelcast.version}</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hazelcast</groupId>
+                <artifactId>hazelcast-hibernate52</artifactId>
+                <version>1.3.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.activation</groupId>
+                <artifactId>jakarta.activation-api</artifactId>
+                <version>1.2.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.activation</groupId>
+                <artifactId>javax.activation-api</artifactId>
+                <version>${javax.activation.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>3.0.2</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.truth</groupId>
+                <artifactId>truth</artifactId>
+                <version>0.41</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.checkerframework</groupId>
+                        <artifactId>checker-compat-qual</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.ow2.asm</groupId>
+                <artifactId>asm</artifactId>
+                <version>${maven.asm.version}</version>
+            </dependency>
+
+            <!-- Web Services -->
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-core</artifactId>
+                <version>3.3.2</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jakarta.activation-api</artifactId>
+                        <groupId>jakarta.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.activation</artifactId>
+                        <groupId>com.sun.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxws</artifactId>
+                <version>3.3.2</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-jta_1.1_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>javax.activation</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.activation</groupId>
+                        <artifactId>javax.activation-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http</artifactId>
+                <version>3.3.2</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-jta_1.1_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>javax.activation</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>javax.xml.soap</groupId>
+                <artifactId>javax.xml.soap-api</artifactId>
+                <version>1.4.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jvnet.staxex</groupId>
+                <artifactId>stax-ex</artifactId>
+                <version>1.8.1</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>jakarta.activation</groupId>
+                        <artifactId>jakarta.activation-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- Jetty is needed if you're are not using the CXFServlet -->
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http-jetty</artifactId>
+                <version>3.3.2</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-jta_1.1_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>javax.activation</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.metro</groupId>
+                <artifactId>webservices-api</artifactId>
+                <version>2.4.3</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jakarta.annotation-api</artifactId>
+                        <groupId>jakarta.annotation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.websocket</groupId>
+                <artifactId>javax.websocket-client-api</artifactId>
+                <version>1.1</version>
+                <type>jar</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-rng-client-api</artifactId>
+                <version>1.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-rng-simple</artifactId>
+                <version>1.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-rng-sampling</artifactId>
+                <version>1.2</version>
+            </dependency>
+
+            <!-- JSF Stuffs -->
+
+            <dependency>
+                <groupId>javax.el</groupId>
+                <artifactId>javax.el-api</artifactId>
+                <version>3.0.1-b04</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>javax.el</artifactId>
+                <version>3.0.1-b11</version>
+            </dependency>
+
+
+
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>javax.el</artifactId>
+                <version>3.0.1-b11</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>javax.faces</artifactId>
+                <version>2.4.0</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.el</groupId>
+                        <artifactId>javax.el-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.glassfish</groupId>
+                        <artifactId>javax.el</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.enterprise</groupId>
+                <artifactId>cdi-api</artifactId>
+                <version>2.0.SP1</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.inject</groupId>
+                        <artifactId>javax.inject</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.el</groupId>
+                        <artifactId>javax.el-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-container-default</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>javax.servlet.jsp-api</artifactId>
+                <version>2.3.3</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet.jsp.jstl</groupId>
+                <artifactId>jstl-api</artifactId>
+                <version>1.2</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>servlet-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.servlet.jsp</groupId>
+                        <artifactId>jsp-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${maven.clean.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>1.6.0</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.ow2.asm</groupId>
+                            <artifactId>asm</artifactId>
+                            <version>${maven.asm.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven.assembly.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${maven.versions.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven.deploy.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven.jar.version}</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-verifier-plugin</artifactId>
+                    <version>${maven.verifyier.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven.surefire.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.junit.jupiter</groupId>
+                            <artifactId>junit-jupiter-engine</artifactId>
+                            <version>${junit.jupiter.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven.source.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven.site.version}</version>
+                </plugin>
+
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${maven.install.version}</version>
+                </plugin>
+
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven.resources.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven.javadoc.version}</version>
+                    <configuration>
+                        <additionalOptions>
+                            <additionalOption>-Xdoclint:none</additionalOption>
+                        </additionalOptions>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-javadoc</id>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${sonarqube.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven.dependency.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven.release.version}</version>
+                    <configuration>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <goals>deploy</goals>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven.gpg.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven.war.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-ear-plugin</artifactId>
+                    <version>${maven.ear.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-ejb-plugin</artifactId>
+                    <version>${maven.ejb.version}</version>
+                </plugin>
+
+                <!-- TODO move these versions up into properties -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.moditect</groupId>
+                    <artifactId>moditect-maven-plugin</artifactId>
+                    <version>1.0.0.Beta2</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>jarjar-maven-plugin</artifactId>
+                    <version>1.9</version>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>1.8</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
+
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>1.6.0</version>
+                </plugin>
+
+
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <licenses>
+        <license>
+            <name>GPL 3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>Marc Magon</name>
+        <url>http://jwebmp.com</url>
+    </organization>
+
+    <scm>
+        <url>https://github.com/GedMarc?tab=repositories</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>GedMarc</id>
+            <name>Marc Magon</name>
+            <email>marc.magon@gmail.com</email>
+            <url>https://github.com/GedMarc</url>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>Jira</system>
+        <url>https://www.jwebmp.com/jira</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>TeamCity</system>
+        <url>http://jwebmp.com/teamcity</url>
+    </ciManagement>
+
+    <profiles>
+        <profile>
+            <id>jwebmp-distribution</id>
+            <activation>
+            </activation>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>jwebmp-snapshot</id>
+                    <name>JWebMPArtifactory-snapshots</name>
+                    <url>https://jwebmp.com/artifactory/libs-snapshot-local</url>
+                </snapshotRepository>
+                <repository>
+                    <id>jwebmp-release</id>
+                    <name>JWebMPArtifactory-releases</name>
+                    <url>https://jwebmp.com/artifactory/libs-release-local</url>
+                </repository>
+            </distributionManagement>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven.gpg.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                    <passphrase>${gpg.passphrase}</passphrase>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+
+        </profile>
+
+        <profile>
+            <id>sonartype-distribution</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>sonar-snapshot</id>
+                    <name>SonarType-snapshots</name>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>sonar-release</id>
+                    <name>SonarType-releases</name>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                    <passphrase>${gpg.passphrase}</passphrase>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <!-- This plugin doesn't work inside pluginManagement, for some reason -->
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>${nexus.staging.maven.plugin.version}</version>
+                        <extensions>true</extensions>
+                        <executions>
+                            <execution>
+                                <id>default-deploy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <serverId>sonar-snapshot</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                            <stagingProgressTimeoutMinutes>300</stagingProgressTimeoutMinutes>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>jdk8</id>
+        </profile>
+
+        <profile>
+            <id>jdk11</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <configuration>
+                                <detectJavaApiLink>false</detectJavaApiLink>
+                                <offlineLinks>
+                                    <offlineLink>
+                                        <!--suppress UnresolvedMavenProperty -->
+                                        <url>https://docs.oracle.com/javase/${maven.compiler.release}/docs/api/</url>
+                                        <location>${project.basedir}</location>
+                                    </offlineLink>
+                                </offlineLinks>
+                                <failOnError>false</failOnError>
+                                <javadocExecutable>/opt/jdk11/jdk-11/bin/javadoc</javadocExecutable>
+                                <additionalOptions>
+                                    <additionalOption>-Xdoclint:none</additionalOption>
+                                </additionalOptions>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <id>attach-javadoc</id>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <configuration>
+                                <release>11</release>
+                                <compilerArguments>
+                                    <AaddGeneratedAnnotation>false</AaddGeneratedAnnotation>
+                                    <Adebug>true</Adebug>
+                                </compilerArguments>
+                                <failOnError>true</failOnError>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+
+        <profile>
+            <id>jdk12</id>
+            <dependencies>
+
+            </dependencies>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <configuration>
+                                <detectJavaApiLink>false</detectJavaApiLink>
+                                <offlineLinks>
+                                    <offlineLink>
+                                        <!--suppress UnresolvedMavenProperty -->
+                                        <url>https://docs.oracle.com/javase/${maven.compiler.release}/docs/api/</url>
+                                        <location>${project.basedir}</location>
+                                    </offlineLink>
+                                </offlineLinks>
+                                <failOnError>false</failOnError>
+                                <javadocExecutable>/opt/jdk12/bin/javadoc</javadocExecutable>
+                                <additionalOptions>
+                                    <additionalOption>-Xdoclint:none</additionalOption>
+                                </additionalOptions>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <id>attach-javadoc</id>
+                                </execution>
+                            </executions>
+                        </plugin>
+
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <configuration>
+                                <release>12</release>
+                                <compilerArguments>
+                                    <AaddGeneratedAnnotation>false</AaddGeneratedAnnotation>
+                                    <Adebug>true</Adebug>
+                                </compilerArguments>
+                                <failOnError>true</failOnError>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+
+
+        <profile>
+            <id>devkit</id>
+            <modules>
+                <module>JWebMPBuilder</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>enable-jackson</id>
+        </profile>
+        <profile>
+            <id>enable-guice</id>
+        </profile>
+        <profile>
+            <id>enable-guicedee</id>
+        </profile>
+        <profile>
+            <id>enable-commons</id>
+        </profile>
+        <profile>
+            <id>enable-thirdparty</id>
+        </profile>
+        <profile>
+            <id>enable-jqxwidgets</id>
+        </profile>
+        <profile>
+            <id>enable-plugins</id>
+        </profile>
+        <profile>
+            <id>enable-examples</id>
+        </profile>
+        <profile>
+            <id>enable-apps</id>
+        </profile>
+    </profiles>
+
+</project>

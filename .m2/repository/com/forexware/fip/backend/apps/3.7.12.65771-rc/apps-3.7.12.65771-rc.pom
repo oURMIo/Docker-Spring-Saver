@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <parent>
+    <groupId>com.forexware.fip</groupId>
+    <artifactId>backend</artifactId>
+    <version>3.7.12.65771-rc</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.forexware.fip.backend</groupId>
+  <artifactId>apps</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.groupId}:${project.artifactId}</name>
+
+  <modules>
+    <module>synchconsole</module>
+    <module>fxco</module>
+    <module>fxco-impl</module>
+    <module>dealer</module>
+    <module>dealer-impl</module>
+    <module>fxco-integration</module>
+    <module>fxco-deprecated-api</module>
+    <module>bankapi</module>
+    <module>bankapi-impl</module>
+    <module>bankinst</module>
+    <module>post-trade-api</module>
+    <module>post-trade-api-impl</module>
+    <module>ejbJarParser</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jmock</groupId>
+      <artifactId>jmock-junit4</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>

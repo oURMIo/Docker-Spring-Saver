@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  app:
+    build: ./saver
+    restart: on-failure
+    ports:
+      - 8000:8000
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true

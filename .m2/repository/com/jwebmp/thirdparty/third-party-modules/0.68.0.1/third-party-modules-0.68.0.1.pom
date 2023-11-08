@@ -1,0 +1,46 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.jwebmp</groupId>
+        <artifactId>jwebmp-builder</artifactId>
+        <version>0.68.0.1</version>
+    </parent>
+
+    <groupId>com.jwebmp.thirdparty</groupId>
+    <artifactId>third-party-modules</artifactId>
+    <version>0.68.0.1</version>
+    <packaging>pom</packaging>
+
+    <name>Third Party Modules</name>
+    <description>The root module packager for the finalized or modules with no intention of moving to JPMS</description>
+
+    <profiles>
+        <profile>
+            <id>devkit</id>
+            <modules>
+            </modules>
+        </profile>
+        <profile>
+            <id>enable-thirdparty</id>
+            <modules>
+                <module>AOPAlliance</module>
+                <module>javax-inject</module>
+                <module>java.activation</module>
+                <module>javax.jms</module>
+                <!--<module>jaxb-api</module>-->
+                <module>javax.activation</module>
+				<module>javax.transaction</module>
+                <module>JsonOrg</module>
+                <module>uadetector</module>
+				<module>JCache</module>
+	<!--			<module>msvcore</module>
+				<module>isorelax</module>
+				<module>xsdlib</module>
+				<module>rngconverter</module>-->
+            </modules>
+        </profile>
+    </profiles>
+
+</project>

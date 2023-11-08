@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <parent>
+    <groupId>com.forexware.fip</groupId>
+    <artifactId>backend</artifactId>
+    <version>3.7.12.65380-rc</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.forexware.fip.backend</groupId>
+  <artifactId>fipcore</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.groupId}:${project.artifactId}</name>
+
+  <build>
+
+    <!-- finalName>${project.artifactId}</finalName -->
+    <sourceDirectory>${basedir}/src</sourceDirectory>
+    <testSourceDirectory>${basedir}/test</testSourceDirectory>
+
+    <resources>
+      <resource>
+        <targetPath>META-INF</targetPath>
+        <directory>${basedir}/META-INF</directory>
+      </resource>
+      <resource>
+        <targetPath>i18n</targetPath>
+        <directory>${basedir}/i18n</directory>
+      </resource>
+    </resources>
+
+  </build>
+
+  <modules>
+    <!-- Entity EJB modules -->
+    <module>fipclient</module>
+    <module>fiputils</module>
+    <module>base</module>
+    <module>bparties</module>
+    <module>calendar</module>
+    <module>mmaker</module>
+    <module>customers</module>
+    <module>ddwidesettings</module>
+    <module>accounts</module>
+    <module>quotes</module>
+    <module>reports</module>
+    <module>fxdeals</module>
+    <module>ddrisk</module>
+    <module>orders</module>
+    <module>liquidation</module>
+    <module>fxtrader</module>
+    <!-- Process EJB modules -->
+    <module>notifications</module>
+    <module>message</module>
+    <module>accountmgmt</module>
+    <module>bpartymgmt</module>
+    <module>fxdealing</module>
+    <module>qcharts</module>
+    <module>quotesmgmt</module>
+    <module>rollovermgmt</module>
+    <module>vendorapi</module>
+    <module>mgmtconsole</module>
+    <module>ordprocessing</module>
+    <module>liquidationmgmt</module>
+    <module>riskmgmt</module>
+    <module>fxco</module>
+    <!-- WebApp modules -->
+    <module>failoverstartup</module>
+    <module>fipstartup</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.oracle.coherence</groupId>
+      <artifactId>coherence</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.weblogic</groupId>
+      <artifactId>wls-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.jdbc</groupId>
+      <artifactId>ojdbc7</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jmock</groupId>
+      <artifactId>jmock-junit4</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.9</version>
+    </dependency>
+  </dependencies>
+
+</project>
