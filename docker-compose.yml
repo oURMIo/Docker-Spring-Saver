@@ -6,7 +6,5 @@ services:
     restart: on-failure
     ports:
       - 8000:8000
-    volumes:
-      - .m2:/root/.m2
     stdin_open: true
     tty: true
